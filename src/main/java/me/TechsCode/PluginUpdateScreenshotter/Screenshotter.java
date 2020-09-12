@@ -22,8 +22,14 @@ public class Screenshotter {
     public BufferedImage createScreen(String plugin) {
         WebDriver browser = new ChromeDriver();
 
-        browser.get("https://"+plugin+".com/updates?copyMode");
+        browser.get("https://"+plugin+".com/updates");
         browser.manage().window().maximize();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Optional<WebElement> update = browser.findElements(By.className("update")).stream().findFirst();
 
