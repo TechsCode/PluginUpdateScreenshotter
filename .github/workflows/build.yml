@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 env:
-  path: build/libs/PluginUpdateScreenshotter.jar
+  path: build/PluginUpdateScreenshotter.jar
   name: PluginUpdateScreenshotter.jar
   build: build-${{ github.run_number }}
 
